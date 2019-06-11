@@ -22,8 +22,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.get('/intro', function(req, res, next) {
-  res.render('intro');
+  res.render('intro',{title:"EMCare Intro"});
 });
+
+app.get('/myform', function(req, res, next) {
+  res.render('myform',{title:"EMCare form"});
+});
+
+app.post('/processform', function(req, res, next) {
+  console.dir(req.body);
+  res.render('formdata',{title:"Form Data", url:req.body.url});
+});
+
+app.post('/form2', function(req, res, next) {
+  res.render('form2data',{title:"Form2 Data", comments:req.body.theComments});
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

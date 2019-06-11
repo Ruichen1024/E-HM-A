@@ -1,0 +1,20 @@
+<%- include('header') -%>
+    <div class="jumbotron">
+        <h1>What is EMCare</h1>
+        <p>Introducing...</p>
+    </div>
+
+    <form method="post" action="/processform">
+      URL: <input type="text" name="url"> <br>
+      <br>
+      <input type="submit">
+    </form>
+
+    <form method="post" action="/form2">
+      <hr>
+      <h2>Comments<h2>
+      <textarea name="theComments"></textarea>
+      <input type="submit">
+    </form>
+
+<%- include('footer') -%>
