@@ -30,8 +30,7 @@ app.get('/myform', function(req, res, next) {
 });
 
 app.post('/processform', function(req, res, next) {
-  console.dir(req.body);
-  res.render('formdata',{title:"Form Data", url:req.body.url});
+  res.render('formdata',{title:"Form Data", name:req.body.name, age:req.body.age, bp:req.body.bp, pulse:req.body.pulse});
 });
 
 app.post('/form2', function(req, res, next) {

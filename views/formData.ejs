@@ -1,11 +1,31 @@
 <%- include('header') -%>
     <div class="jumbotron">
-        <h1>What is EMCare</h1>
+        <h1 style="font-family:'Optima'; font-weight:bold">EMCare</h1>
         <p>Introducing...</p>
     </div>
 
-    You Entered the following ...<br>
+    <h3>You Entered the following ...</h3>
+    <br>
 
-    The URL was: <%= url %>
+    <table class="table table-dark">
+      <tbody>
+        <tr>
+          <td>Name</td>
+          <td><%= name %></td>
+        </tr>
+        <tr>
+          <td>Age</td>
+          <td><%= age %></td>
+        </tr>
+        <tr>
+          <td>Blood Pressure</td>
+          <td><%= bp %></td>
+        </tr>
+        <tr>
+          <td>Pulse</td>
+          <td><%= pulse %></td>
+        </tr>
+      </tbody>
+    </table>
 
 <%- include('footer') -%>

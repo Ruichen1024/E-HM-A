@@ -1,13 +1,23 @@
 <%- include('header') -%>
     <div class="jumbotron">
-        <h1>What is EMCare</h1>
-        <p>Introducing...</p>
+        <h1 style="font-family:'Optima'; font-weight:bold">Welcome to EMCare</h1>
+        <p>Care is always there</p>
     </div>
 
     <form method="post" action="/processform">
-      URL: <input type="text" name="url"> <br>
+      Name: <input type="text" name="name">
       <br>
-      <input type="submit">
+      <br>
+      Age: <input type="text" name="age">
+      <br>
+      <br>
+      Blood Pressure: <input type="text" name="bp">
+      <br>
+      <br>
+      Pulse: <input type="text" name="pulse">
+      <br>
+      <br>
+      <input type="submit" value="Add" class="btn btn-primary">
     </form>
 
     <form method="post" action="/form2">
