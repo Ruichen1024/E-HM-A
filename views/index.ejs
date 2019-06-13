@@ -3,7 +3,47 @@
         <h1 style="font-family:'Optima'; font-weight:bold">Welcome to EMCare</h1>
         <p>We aim to help you monitoring your and your family members' health level!</p>
     </div>
-    <ul>
-      <li><h2><a href="/myform">THE FORM OF EMCare</a></h2>
-    </ul>
+    <div class="row">
+        <div class="col-sm">
+          <img src="/images/Heart1.jpeg" width="80%" alt="heart1">
+        </div>
+        <div class="col">
+          <ul>
+            <li><h3><a href="/myform">Add Personal File</a></h3>
+          </ul>
+        </div>
+      </div>
+      <br>
+      <hr>
+    <div class="row">
+      <div class="col-sm">
+        <div class="jumbotron">
+            <h1 style="font-family:'Optima'; font-weight:bold">Feedback</h1>
+            <p>Leave any questions you have here...</p>
+        </div>
+      </div>
+      <div class="col">
+        <h2 style="font-family:'Optima'; font-weight:light">Calculate your BMI index!</h2>
+        <table class="table table-bordered">
+          <tr>
+            <td>Height</td>
+            <td><input type="text">ft <p></p> <input type="text">in</td>
+          </tr>
+          <tr>
+            <td>Weight</td>
+            <td><input type="text">lb</td>
+          </tr>
+          <tr>
+            <td>BMI</td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-primary">Calculate</button>
+        <div class="spinner-border text-primary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </div>
 <%- include('footer') -%>
