@@ -25,6 +25,10 @@ app.get('/intro', function(req, res, next) {
   res.render('intro',{title:"EMCare Intro"});
 });
 
+app.get('/care', function(req, res, next) {
+  res.render('care',{title:"EMCare Care"});
+});
+
 app.get('/myform', function(req, res, next) {
   res.render('myform',{title:"EMCare form"});
 });
