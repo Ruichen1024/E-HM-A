@@ -1,0 +1,15 @@
+<%- include('header') -%>
+    <div class="jumbotron">
+        <h1>Stats</h1>
+    </div>
+    <ol>
+    <% for(i = 0; i<stats.length; i++){  %>
+        <li> <a href="<%= stats[i].name %>">
+            <%= stats[i].name %></a>
+            <%= stats[i].age %>
+            <%= stats[i].Blood_Pressure %>
+            <%= stats[i].Pulse %>
+           </li>
+    <% } %>
+    </ol>
+<%- include('footer') -%>

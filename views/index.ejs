@@ -11,10 +11,12 @@
           <ul>
             <li><h3><a href="/myform">Add Personal File</a></h3>
           </ul>
+            <li>Start right away to be part of this community</li>
         </div>
       </div>
       <br>
       <hr>
+    <form>
     <div class="row">
       <div class="col-sm">
         <div class="jumbotron">
@@ -27,7 +29,7 @@
         <table class="table table-bordered">
           <tr>
             <td>Height</td>
-            <td><input type="text">ft <p></p> <input type="text">in</td>
+            <td><input type="text" name="hft" >ft <p></p> <input type="text" name="hin" >in</td>
           </tr>
           <tr>
             <td>Weight</td>
@@ -40,10 +42,11 @@
         </table>
       </div>
       <div class="col">
-        <button type="button" class="btn btn-primary">Calculate</button>
+        <input type="button" value="Calculate" class="btn btn-primary">
         <div class="spinner-border text-primary" role="status">
           <span class="sr-only">Loading...</span>
         </div>
       </div>
     </div>
+    <form>
 <%- include('footer') -%>
