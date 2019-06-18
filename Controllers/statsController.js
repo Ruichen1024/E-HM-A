@@ -40,3 +40,23 @@ exports.getAllStats = ( req, res ) => {
       //console.log( 'skill promise complete' );
     } );
 };
+
+exports.getOneStat = ( req, res ) => {
+  //gconsle.log('in getAllSkills')
+  const id = req.params.id
+  console.log('the user id is '+id)
+  Stats.findOne({_id:id})
+    .exec()
+    .then( ( Stats ) => {
+      res.render( 'oneStat', {
+        stats:Stats, title:"OneStat"
+      } );
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      //console.log( 'skill promise complete' );
+    } );
+};

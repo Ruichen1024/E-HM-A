@@ -24,6 +24,7 @@
             <p>Leave any questions you have here...</p>
         </div>
       </div>
+      <form method="post" action="/calcBMI">
       <div class="col">
         <h2 style="font-family:'Optima'; font-weight:light">Calculate your BMI index!</h2>
         <table class="table table-bordered">
@@ -33,7 +34,7 @@
           </tr>
           <tr>
             <td>Weight</td>
-            <td><input type="text">lb</td>
+            <td><input type="text" name="weight">lb</td>
           </tr>
           <tr>
             <td>BMI</td>
@@ -42,11 +43,12 @@
         </table>
       </div>
       <div class="col">
-        <input type="button" value="Calculate" class="btn btn-primary">
+        <input type="submit" value="Calculate" class="btn btn-primary">
         <div class="spinner-border text-primary" role="status">
           <span class="sr-only">Loading...</span>
         </div>
       </div>
+      </form>
     </div>
     <form>
 <%- include('footer') -%>

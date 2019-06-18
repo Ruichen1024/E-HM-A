@@ -6,8 +6,13 @@
 
   <form method="post" action="/showStats">
     <hr>
-    <h2>View All Data<h2>
-    <input type="submit" value="showAllData" class="btn btn-danger">
+    <% if (loggedIn) { %>
+      <h2>View All Data<h2>
+      <input type="submit" value="showAllData" class="btn btn-danger">
+     <% } else { %>
+       
+       <% } %>
+
   </form>
 
 <%- include('footer') -%>
