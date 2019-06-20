@@ -1,0 +1,66 @@
+<%- include('header') -%>
+<div class="jumbotron">
+    <h1>CS152aj Quiz1</h1>
+    <p>Introducing to the best web page ever to the whole world</p>
+</div>
+
+    <table>
+      <tr>
+        <td width="5%"><h1>1</h1></td>
+        <td width="20%"><h1>2</h1></td>
+        <td width="30%"><h1>3</h1></td>
+        <td width="5%"><h1>1</h1></td>
+        <td width="20%"><h1>2</h1></td>
+        <td width="30%"><h1>3</h1></td>
+      </tr>
+      <tr>
+        <td>Introducing to the best web page ever to the whole world</td>
+        <td>Introducing to the best web page ever to the whole world</td>
+        <td>Introducing to the best web page ever to the whole world</td>
+        <td>Introducing to the best web page ever to the whole world</td>
+        <td>Introducing to the best web page ever to the whole world</td>
+        <td>Introducing to the best web page ever to the whole world</td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <td width="30%"><h1>Personal Info</h1></td>
+        <td></td>
+        <td width="38.3%"><h1>Short Bio</h1></td>
+      </tr>
+      <tr>
+        <td>
+          <table class="table table-bordered">
+            <tr>
+              <td>Name</td>
+              <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+              <td>Birthday</td>
+              <td><input type="date" name="date" value="mm/dd/yyyy"></td>
+            </tr>
+            <tr>
+              <td>Gender</td>
+              <td>
+                <input type="radio" name="gender" value="male"> Male<br>
+                <input type="radio" name="gender" value="female"> Female<br>
+                <input type="radio" name="gender" value="other"> Other
+            </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+        </td>
+        <td>
+          <textarea rows="10" cols="40">This is space is 40 columns wide and has 10 rows. Only one gender can be selected at a time.</textarea>
+          <div>&nbsp</div>
+          <div>
+          <button type="button" class="btn btn-primary">Submit</button>
+          <button type="button" class="btn btn-warning">Save</button>
+          <button type="button" class="btn btn-danger">Reset</button>
+          </div>
+        </td>
+      </tr>
+      </table>
+<%- include('footer') -%>
