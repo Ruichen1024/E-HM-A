@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var apikey = require('./config/apikeys');
 
 session = require("express-session"),
 bodyParser = require("body-parser"),
@@ -23,6 +24,7 @@ db.once('open', function() {
 });
 
 const statsController = require('./controllers/statsController')
+const profileController = require('./controllers/profileController')
 
 
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
@@ -30,7 +32,6 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const passport = require('passport')
 const configPassport = require('./config/passport')
 configPassport(passport)
-
 
 var app = express();
 
@@ -148,6 +149,19 @@ function isLoggedIn(req, res, next) {
     }
 }
 
+app.get('/profile', isLoggedIn, function(req, res){
+  res.render('profile')
+});
+
+app.get('/editProfile', isLoggedIn, function(req, res){
+  res.render('editProfile')
+});
+
+app.post('/updateProfile', profileController.updateProfile)
+
+
+
+
 // we require them to be logged in to see their profile
 app.get('/stats', function(req, res) {
         res.render('stats')/*, {
@@ -159,8 +173,13 @@ app.get('/stats', function(req, res) {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
 app.get('/intro', function(req, res, next) {
   res.render('intro',{title:"EMCare Intro"});
+});
+
+app.get('/quiz1', function(req, res, next) {
+  res.render('quiz1',{title:"Quiz1"});
 });
 
 app.get('/care', function(req, res, next) {
@@ -181,10 +200,14 @@ function processFormData(req,res,next){
      {title:"Form Data",name:req.body.name, age:req.body.age, bp:req.body.bp, pulse:req.body.pulse})
 }
 
+var BMI;
 function calcBMI(req,res,next){
-  res.render('calcBMI',
-    {title:"Calc BMI", hft:req.body.hft, hin:req.body.hin, weight:req.body.weight})
+  BMI = (req.body.weight/(Math.pow((12*req.body.hft+req.body.hin),2)))
+  console.log("the BMI is", BMI)
+
 }
+
+app.post('calcBMI', calcBMI)
 
 app.post('/processform', statsController.saveStats)
 
@@ -195,6 +218,8 @@ app.get('/Added', function(req, res, next) {
 app.post('/showStats', statsController.getAllStats)
 
 app.get('/showStats/:id', statsController.getOneStat)
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

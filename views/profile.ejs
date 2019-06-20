@@ -1,0 +1,16 @@
+<%- include('header') -%>
+  <div class="jumbotron">
+      <h1>User Profile for <%= user.userName %></h1>
+      <hr>
+      <p>Hi <%= user.googlename %>
+          You have logged in to EMCare!
+      </p>
+      <br>
+      <img src="<%= user.profilePicURL%>" width="200">
+      <hr>
+      <h3>Bio: <%= user.bio%></h3>
+      <hr>
+      <p> Last updated on <%= user.lastLogin %> </p>
+      <a href="/editProfile" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">update your info</a>
+  </div>
+<%- include('footer') -%>

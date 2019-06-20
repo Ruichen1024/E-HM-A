@@ -1,0 +1,18 @@
+<%- include('header') -%>
+  <div class="jumbotron">
+      <h1>Edit User Profile for <%= user.googlename %></h1>
+    </div>
+    <form method="post" action="/updateProfile">
+      EMCare User Name: <input type="text" name="userName" value="Enter your user name here...">
+      <br>
+      <br>
+      Bio: <input type="text" name="bio">
+      <br>
+      <br>
+      upload profile photo: <input type="text" name="profielPicURL">
+      <br>
+      <br>
+      <input type="submit" value="Upload" class="btn btn-primary">
+    </form>
+
+<%- include('footer') -%>

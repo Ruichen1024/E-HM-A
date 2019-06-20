@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "config": "^3.1.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
@@ -17,6 +18,10 @@
     "mongoose": "^5.6.0",
     "morgan": "~1.9.1",
     "passport": "^0.4.0",
-    "passport-google-oauth": "^2.0.0"
+    "passport-google-oauth": "^2.0.0",
+    "passport-wechat": "^2.0.4",
+    "passport-wechat-auth": "0.0.1",
+    "wechat-jssdk": "^5.0.1",
+    "wx_jsapi_sign": "^1.0.4"
   }
 }

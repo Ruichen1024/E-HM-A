@@ -5,6 +5,7 @@
 //var FacebookStrategy = require('passport-facebook').Strategy;
 //var TwitterStrategy  = require('passport-twitter').Strategy;
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var WechatStrategy = require('passport-wechat');
 
 // load up the user model
 var User       = require('../models/User');
