@@ -24,31 +24,40 @@
             <p>Leave any questions you have here...</p>
         </div>
       </div>
-      <form method="post" action="/calcBMI">
       <div class="col">
         <h2 style="font-family:'Optima'; font-weight:light">Calculate your BMI index!</h2>
         <table class="table table-bordered">
           <tr>
             <td>Height</td>
-            <td><input type="text" name="hft" >ft <p></p> <input type="text" name="hin" >in</td>
+            <td><input type="text" id="hft" >ft <p></p> <input type="text" id="hin" >in</td>
           </tr>
           <tr>
             <td>Weight</td>
-            <td><input type="text" name="weight">lb</td>
+            <td><input type="text" id="weight">lb</td>
           </tr>
           <tr>
             <td>BMI</td>
-            <td></td>
+            <td>
+              <output name="x" for="a b" id="bmi"></output>
+            </td><br>
           </tr>
         </table>
       </div>
       <div class="col">
-        <input type="submit" value="Calculate" class="btn btn-primary">
+        <button onClick="calc()" type="button" class="btn btn-primary">Calculate</button>
+        <script>
+          function calc(){
+            var hft = document.getElementById('hft')
+            var hin = document.getElementById('hin')
+            var w = document.getElementById('weight')
+            var bmi = document.getElementById('bmi')
+            bmi.value = ((703*w.value)/(hft.value*12 + hin.value*1)/(hft.value*12 + hin.value*1)).toFixed(2)
+          }
+        </script>
         <div class="spinner-border text-primary" role="status">
           <span class="sr-only">Loading...</span>
         </div>
       </div>
-      </form>
     </div>
-    <form>
+
 <%- include('footer') -%>

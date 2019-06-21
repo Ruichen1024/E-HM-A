@@ -16,6 +16,9 @@ var userSchema = Schema( {
   createdAt: Date,
   profilePicURL: String,
   lastLogin: Date,
+  zipcode: String,
+  city: String,
+  state: String,
   classIds:[Schema.Types.ObjectId],
   classCodes:[String],
   taEmail: String
