@@ -25,6 +25,7 @@ db.once('open', function() {
 
 const statsController = require('./controllers/statsController')
 const profileController = require('./controllers/profileController')
+const forumPostController = require('./controllers/forumPostController')
 
 
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
@@ -200,14 +201,6 @@ function processFormData(req,res,next){
      {title:"Form Data",name:req.body.name, age:req.body.age, bp:req.body.bp, pulse:req.body.pulse})
 }
 
-var BMI;
-function calcBMI(req,res,next){
-  BMI = (req.body.weight/(Math.pow((12*req.body.hft+req.body.hin),2)))
-  console.log("the BMI is", BMI)
-
-}
-
-app.post('calcBMI', calcBMI)
 
 app.post('/processform', statsController.saveStats)
 
@@ -218,6 +211,10 @@ app.get('/Added', function(req, res, next) {
 app.post('/showStats', statsController.getAllStats)
 
 app.get('/showStats/:id', statsController.getOneStat)
+
+app.get('/forum',forumPostController.getAllForumPosts)
+
+app.post('/forumDelete',forumPostController.deleteForumPost)
 
 
 // catch 404 and forward to error handler

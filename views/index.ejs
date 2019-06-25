@@ -54,6 +54,21 @@
             bmi.value = ((703*w.value)/(hft.value*12 + hin.value*1)/(hft.value*12 + hin.value*1)).toFixed(2)
           }
         </script>
+
+        <button onClick="erase()" type="button" class="btn btn-primary">Reset</button>
+        <script>
+          function erase(){
+            var hft = document.getElementById('hft')
+            var hin = document.getElementById('hin')
+            var w = document.getElementById('weight')
+            var bmi = document.getElementById('bmi')
+            hin.value=""
+            hft.value=""
+            w.value=""
+            bmi.value=""
+          }
+        </script>
+
         <div class="spinner-border text-primary" role="status">
           <span class="sr-only">Loading...</span>
         </div>
