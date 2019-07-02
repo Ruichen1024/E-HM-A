@@ -23,8 +23,8 @@ db.once('open', function() {
   console.log("we are connected!!!")
 });
 
-const statsController = require('./controllers/statsController')
 const profileController = require('./controllers/profileController')
+const statsController = require('./controllers/statsController')
 const forumPostController = require('./controllers/forumPostController')
 
 
