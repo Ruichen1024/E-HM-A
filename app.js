@@ -11,12 +11,12 @@ bodyParser = require("body-parser"),
 User = require( './models/User' ),
 flash = require('connect-flash')
 
-
+const MONGODB_URI = 'mongodb://heroku_w2s8q0hf:b7un87d0pgs7159nsvhcmstnb9@ds245927.mlab.com:45927/heroku_w2s8q0hf';
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 const mongoose = require( 'mongoose' );
-mongoose.connect( 'mongodb://localhost/myDB' );
+mongoose.connect(MONGODB_URI, { userNewUrlParser: true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
