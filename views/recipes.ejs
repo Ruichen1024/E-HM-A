@@ -1,0 +1,38 @@
+<%- include('header') -%>
+    <div class="jumbotron">
+        <h1 style="font-family:'Optima'; font-weight:bold">Welcome to EMCare</h1>
+        <p>Care is always there</p>
+    </div>
+
+    <form method="post" action="/processRecipe">
+      Name: <input type="text" name="name">
+      <br>
+      <br>
+      Ingredient: <input type="text" name="ingredient">
+      <br>
+      <br>
+      Description: <input type="text" name="description">
+      <br>
+      <br>
+      <input type="submit" value="submit" class="btn btn-primary">
+    </form>
+
+    <form method="post" action="/recipeDelete">
+      <ol>
+        <% for(i = 0; i<recipe.length; i++){  %>
+            <li>
+                  <b> Name:<%= recipe[i].name %> </b>
+                      user: <%= recipe[i].userName %>   <br>
+                      Created At:<%= recipe[i].createdAt %>   <br>
+                      ingredient:<%= recipe[i].ingredient %>    <br>
+                  <i> description:<%= recipe[i].description %>    </i>
+                  <% if (recipe[i].userId.equals(user._id)) { %>
+                      <input type="checkbox" name="delete" value="<%= recipe[i]._id %>">
+                  <% } %>
+            </li>
+        <% } %>
+        </ol>
+        <input type="submit" value="delete marked">
+      </form>
+
+<%- include('footer') -%>

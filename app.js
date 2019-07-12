@@ -20,12 +20,16 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 const mongoose = require( 'mongoose' );
-mongoose.connect(MONGODB_URI, { userNewUrlParser: true});
+mongoose.connect( 'mongodb://localhost/myDB', { useNewUrlParser: true } );
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   console.log("we are connected!!!")
 });
+
+
+
+
 
 var uristring =
     process.env.MONGOLAB_URI ||
@@ -42,9 +46,11 @@ var uristring =
       }
     });
 
+
 const profileController = require('./controllers/profileController')
 const statsController = require('./controllers/statsController')
 const forumPostController = require('./controllers/forumPostController')
+const recipeController = require('./controllers/recipeController')
 
 
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
@@ -227,6 +233,8 @@ app.get('/Added', function(req, res, next) {
   res.render('Added',{title:"ADD"});
 });
 
+
+
 app.post('/showStats', statsController.getAllStats)
 
 app.get('/showStats/:id', statsController.getOneStat)
@@ -234,6 +242,14 @@ app.get('/showStats/:id', statsController.getOneStat)
 app.get('/forum',forumPostController.getAllForumPosts)
 
 app.post('/forumDelete',forumPostController.deleteForumPost)
+
+app.get('/recipes',recipeController.getAllRecipes)
+
+app.post('/processRecipe', recipeController.saveRecipes)
+
+app.get('/recipeAdded', recipeController.getAllRecipes)
+
+app.post('/recipeDelete',recipeController.deleteRecipe)
 
 
 // catch 404 and forward to error handler
